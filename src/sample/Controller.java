@@ -67,20 +67,25 @@ public class Controller {
                 File file = new File(mcNameText + "_uniform.png");
                 ImageIO.write(combined, "png", file);
                 hyperlink.setVisible(true);
-                hyperlink.setOnAction(e -> {
-                    if(Desktop.isDesktopSupported()) {
-                        try {
-                            Desktop.getDesktop().open(file);
-                        } catch (Exception ex) {
-                            System.out.println(e);
-                        }
-                    }
-                });
+                hyperlink.setOnAction(e -> hyperlinkAction(file));
+                playerSkin.setOnMouseClicked(e -> hyperlinkAction(file));
             } catch (IOException e) {
                 e.printStackTrace();
             }
             insufficientName.setTextFill(javafx.scene.paint.Color.web("#00ff00"));
             insufficientName.setText("Operation successful!");
+        }
+    }
+
+    public void hyperlinkAction(File file) {
+        {
+            if(Desktop.isDesktopSupported()) {
+                try {
+                    Desktop.getDesktop().open(file);
+                } catch (Exception ex) {
+                    System.out.println(ex);
+                }
+            }
         }
     }
 
