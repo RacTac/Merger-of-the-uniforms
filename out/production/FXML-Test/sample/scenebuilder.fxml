@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="157.0" prefWidth="295.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <top>
+      <HBox prefHeight="34.0" prefWidth="275.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+         <children>
+            <TextField fx:id="mcName" onAction="#onEnter" prefHeight="26.0" prefWidth="227.0" promptText="Minecraft username">
+               <font>
+                  <Font name="Helvetica" size="13.0" />
+               </font>
+            </TextField>
+            <Button fx:id="mergeButton" mnemonicParsing="false" onAction="#onEnter" prefHeight="25.0" prefWidth="128.0" text="Merge">
+               <HBox.margin>
+                  <Insets left="10.0" top="1.0" />
+               </HBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="insufficientName" layoutX="21.0" layoutY="6.0" prefHeight="17.0" prefWidth="292.0" textFill="RED" />
+            <ImageView fx:id="playerSkin" fitHeight="64.0" fitWidth="64.0" layoutX="229.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
