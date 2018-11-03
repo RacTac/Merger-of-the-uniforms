@@ -16,7 +16,6 @@ public class UUIDGetter {
     public static final String getUUID(String player) {
         
         try {
-            System.out.println(System.currentTimeMillis()/1000);
             URL url = new URL("https://api.mojang.com/users/profiles/minecraft/" + player + "?at=" + System.currentTimeMillis()/1000);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
@@ -31,7 +30,6 @@ public class UUIDGetter {
                 jsonResponse.append(inputLine);
             }
             reader.close();
-            System.out.println(jsonResponse);
 
             JSONObject obj = new JSONObject(jsonResponse.toString());
             uuid = obj.getString("id");
